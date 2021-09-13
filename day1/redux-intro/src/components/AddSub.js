@@ -17,11 +17,20 @@ function AddSub(props) {
   };
 
   return (
-    <div>
-      <h2>Add-Subtract Counter</h2>
-      <input type="text" placeholder="Enter Number" onChange={handleOnChange} />
-      <button onClick={handleAdd}>Add</button>
-      <button onClick={handleSub}>Subtract</button>
+    <div id="addSubDiv">
+      <h2 id="addSubH2">Add-Subtract Counter</h2>
+      <input
+        id="addSubInput"
+        type="text"
+        placeholder="Enter Number"
+        onChange={handleOnChange}
+      />
+      <button className="addSubBtn" onClick={handleAdd}>
+        Add
+      </button>
+      <button className="addSubBtn" onClick={handleSub}>
+        Subtract
+      </button>
     </div>
   );
 }

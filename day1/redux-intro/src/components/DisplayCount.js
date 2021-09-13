@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 
 function DisplayCount(props) {
   return (
-    <div>
-      <h2>{props.count}</h2>
+    <div id="displayDiv">
+      <h2 id="displayH2">{props.count}</h2>
     </div>
   );
 }

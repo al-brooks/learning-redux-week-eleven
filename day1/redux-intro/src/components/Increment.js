@@ -10,10 +10,14 @@ function Increment(props) {
   };
 
   return (
-    <div>
-      <h2>Increment-Decrement Counter</h2>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
+    <div id="incrementDiv">
+      <h2 id="incrementH2">Increment-Decrement Counter</h2>
+      <button className="incrementBtn" onClick={handleIncrement}>
+        Increment
+      </button>
+      <button className="incrementBtn" onClick={handleDecrement}>
+        Decrement
+      </button>
     </div>
   );
 }
