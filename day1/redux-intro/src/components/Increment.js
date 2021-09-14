@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import * as actionTypes from '../store/actions/actionTypes';
 
 function Increment(props) {
   const handleIncrement = () => {
@@ -24,8 +25,8 @@ function Increment(props) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onIncrement: () => dispatch({ type: 'INCREMENT' }),
-    onDecrement: () => dispatch({ type: 'DECREMENT' })
+    onIncrement: () => dispatch({ type: actionTypes.INCREMENT }),
+    onDecrement: () => dispatch({ type: actionTypes.DECREMENT })
   };
 };
 

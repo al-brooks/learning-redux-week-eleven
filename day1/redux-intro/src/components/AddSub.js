@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { useState } from 'react';
+import * as actionTypes from '../store/actions/actionTypes';
 
 function AddSub(props) {
   let [value, setValue] = useState(0);
@@ -38,10 +39,10 @@ function AddSub(props) {
 const mapDispatchToProps = (dispatch) => {
   return {
     onAdd: (value) => {
-      dispatch({ type: 'ADD', payload: value });
+      dispatch({ type: actionTypes.ADD, payload: value });
     },
     onSub: (value) => {
-      dispatch({ type: 'SUB', payload: value });
+      dispatch({ type: actionTypes.SUB, payload: value });
     }
   };
 };
