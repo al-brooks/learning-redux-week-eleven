@@ -1,22 +1,14 @@
 import { connect } from 'react-redux';
-import * as actionTypes from '../store/actions/actionTypes';
+import * as actionCreators from '../store/actions/actionCreators';
 
 function Increment(props) {
-  const handleIncrement = () => {
-    props.onIncrement();
-  };
-
-  const handleDecrement = () => {
-    props.onDecrement();
-  };
-
   return (
     <div id="incrementDiv">
       <h2 id="incrementH2">Increment-Decrement Counter</h2>
-      <button className="incrementBtn" onClick={handleIncrement}>
+      <button className="incrementBtn" onClick={() => props.onIncrement()}>
         Increment
       </button>
-      <button className="incrementBtn" onClick={handleDecrement}>
+      <button className="incrementBtn" onClick={() => props.onDecrement()}>
         Decrement
       </button>
     </div>
@@ -25,8 +17,8 @@ function Increment(props) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onIncrement: () => dispatch({ type: actionTypes.INCREMENT }),
-    onDecrement: () => dispatch({ type: actionTypes.DECREMENT })
+    onIncrement: () => dispatch(actionCreators.incrementCounter()),
+    onDecrement: () => dispatch(actionCreators.decrementCounter())
   };
 };
 

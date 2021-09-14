@@ -1,20 +1,12 @@
 import { connect } from 'react-redux';
 import { useState } from 'react';
-import * as actionTypes from '../store/actions/actionTypes';
+import * as actionCreators from '../store/actions/actionCreators';
 
 function AddSub(props) {
   let [value, setValue] = useState(0);
 
   const handleOnChange = (e) => {
     setValue(parseInt(e.target.value));
-  };
-
-  const handleAdd = () => {
-    props.onAdd(value);
-  };
-
-  const handleSub = () => {
-    props.onSub(value);
   };
 
   return (
@@ -26,10 +18,10 @@ function AddSub(props) {
         placeholder="Enter Number"
         onChange={handleOnChange}
       />
-      <button className="addSubBtn" onClick={handleAdd}>
+      <button className="addSubBtn" onClick={() => props.onAdd(value)}>
         Add
       </button>
-      <button className="addSubBtn" onClick={handleSub}>
+      <button className="addSubBtn" onClick={() => props.onSub(value)}>
         Subtract
       </button>
     </div>
@@ -39,10 +31,10 @@ function AddSub(props) {
 const mapDispatchToProps = (dispatch) => {
   return {
     onAdd: (value) => {
-      dispatch({ type: actionTypes.ADD, payload: value });
+      dispatch(actionCreators.addValue(value));
     },
     onSub: (value) => {
-      dispatch({ type: actionTypes.SUB, payload: value });
+      dispatch(actionCreators.subValue(value));
     }
   };
 };
